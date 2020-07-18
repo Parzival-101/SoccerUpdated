@@ -20,6 +20,12 @@ namespace SoccerUpdated.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        // Dbsets for models
+        public DbSet<Players> Players { get; set; }
+        public DbSet<Club> Clubs { get; set; }
+        public DbSet<League> Leagues { get; set; }
+
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
