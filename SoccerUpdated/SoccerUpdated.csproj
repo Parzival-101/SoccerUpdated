@@ -181,6 +181,14 @@
     <Compile Include="Migrations\202007171402210_InitialModel.Designer.cs">
       <DependentUpon>202007171402210_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007190701298_ClubModelUpdated.cs" />
+    <Compile Include="Migrations\202007190701298_ClubModelUpdated.Designer.cs">
+      <DependentUpon>202007190701298_ClubModelUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007190711154_LeagueAndPlayersModelChanged.cs" />
+    <Compile Include="Migrations\202007190711154_LeagueAndPlayersModelChanged.Designer.cs">
+      <DependentUpon>202007190711154_LeagueAndPlayersModelChanged.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Club.cs" />
@@ -272,6 +280,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202007171402210_InitialModel.resx">
       <DependentUpon>202007171402210_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007190701298_ClubModelUpdated.resx">
+      <DependentUpon>202007190701298_ClubModelUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007190711154_LeagueAndPlayersModelChanged.resx">
+      <DependentUpon>202007190711154_LeagueAndPlayersModelChanged.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

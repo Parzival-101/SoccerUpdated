@@ -9,6 +9,7 @@ namespace SoccerUpdated.Models
     {
         public byte Id { get; set; }
         public string Name { get; set; }
+        public DateTime? Founded { get; set; }
         public string Description { get; set; }
         public IList<Club> Clubs { get; set; }
     }

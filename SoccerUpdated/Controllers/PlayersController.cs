@@ -12,7 +12,7 @@ namespace SoccerUpdated.Controllers
         // GET: Players
         public ActionResult Random()
         {
-            var player = new Players() { Name = "Jaden Sancho", Club = "Bourisia Dortmund", Description = "Striker -running turbo" };
+            var player = new Players() { Name = "Jaden Sancho"};
             return View(player);
         }
     }
