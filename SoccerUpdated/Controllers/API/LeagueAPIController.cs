@@ -12,7 +12,7 @@ namespace SoccerUpdated.Controllers.API
     {
         private ApplicationDbContext _context;
 
-        public LeagueController()
+        public LeagueAPIController()
         {
             _context = new ApplicationDbContext();
         }

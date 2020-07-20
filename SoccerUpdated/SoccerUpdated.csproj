@@ -200,6 +200,22 @@
     <Compile Include="Migrations\202007190711154_LeagueAndPlayersModelChanged.Designer.cs">
       <DependentUpon>202007190711154_LeagueAndPlayersModelChanged.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007200711192_SeedBaseData.cs" />
+    <Compile Include="Migrations\202007200711192_SeedBaseData.Designer.cs">
+      <DependentUpon>202007200711192_SeedBaseData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007200823012_LegueIdUpdateAndSeeding.cs" />
+    <Compile Include="Migrations\202007200823012_LegueIdUpdateAndSeeding.Designer.cs">
+      <DependentUpon>202007200823012_LegueIdUpdateAndSeeding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007200829553_ALterClubIdAndSeedClubAndPlayers.cs" />
+    <Compile Include="Migrations\202007200829553_ALterClubIdAndSeedClubAndPlayers.Designer.cs">
+      <DependentUpon>202007200829553_ALterClubIdAndSeedClubAndPlayers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007200853453_ClubData.cs" />
+    <Compile Include="Migrations\202007200853453_ClubData.Designer.cs">
+      <DependentUpon>202007200853453_ClubData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Club.cs" />
@@ -297,6 +313,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007190711154_LeagueAndPlayersModelChanged.resx">
       <DependentUpon>202007190711154_LeagueAndPlayersModelChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007200711192_SeedBaseData.resx">
+      <DependentUpon>202007200711192_SeedBaseData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007200823012_LegueIdUpdateAndSeeding.resx">
+      <DependentUpon>202007200823012_LegueIdUpdateAndSeeding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007200829553_ALterClubIdAndSeedClubAndPlayers.resx">
+      <DependentUpon>202007200829553_ALterClubIdAndSeedClubAndPlayers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007200853453_ClubData.resx">
+      <DependentUpon>202007200853453_ClubData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
