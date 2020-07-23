@@ -216,6 +216,10 @@
     <Compile Include="Migrations\202007200853453_ClubData.Designer.cs">
       <DependentUpon>202007200853453_ClubData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007231410582_AddDataannotation.cs" />
+    <Compile Include="Migrations\202007231410582_AddDataannotation.Designer.cs">
+      <DependentUpon>202007231410582_AddDataannotation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Club.cs" />
@@ -288,6 +292,7 @@
     <Content Include="Views\League\Index.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Club\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -326,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007200853453_ClubData.resx">
       <DependentUpon>202007200853453_ClubData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007231410582_AddDataannotation.resx">
+      <DependentUpon>202007231410582_AddDataannotation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

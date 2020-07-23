@@ -1,0 +1,27 @@
+﻿@model IEnumerable<SoccerUpdated.Models.Club>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ 
+    <table>
+        <thead>
+            <tr>
+                <td>Club</td>
+                <td>Stadium</td>
+                <td>League</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var club in Model)
+            {
+                <tr>
+                    <td>@club.Name</td>
+                    <td>@club.Stadium</td>
+                    <td>@club.League.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

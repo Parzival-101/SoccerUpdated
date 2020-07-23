@@ -1,4 +1,5 @@
 ﻿using SoccerUpdated.Models;
+using System.Data.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,21 @@ namespace SoccerUpdated.Controllers
 {
     public class ClubController : Controller
     {
-        // GET: Club
-        public ActionResult Random()
+        private ApplicationDbContext _context;
+
+        public ClubController()
         {
-            var club = new Club() { Name = "Bourisia Dortmund" };
-            return View(club);
+            _context = new ApplicationDbContext();
+        }
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();    
+        }
+        // GET: Club
+        public ActionResult Index()
+        {
+            var clubs = _context.Clubs.Include(c=> c.League).ToList();
+            return View(clubs);
         }
     }
 }
