@@ -13,7 +13,12 @@ namespace SoccerUpdated.Models
         [Required]
         [MaxLength(255)]
         public string Name { get; set; }
+
+        public DateTime? BirthDate { get; set; }
+
+        [Required]
         public Club Club { get; set; }
+
         public string Position { get; set; }
         public string Country { get; set; }
 

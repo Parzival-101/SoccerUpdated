@@ -1,0 +1,33 @@
+﻿@model SoccerUpdated.Models.Players
+@{
+    ViewBag.Title = "Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>@Model.Name</h2>
+<table>
+    <thead>
+        <tr>
+            <td>Country</td>
+            <td>Club</td>
+            @if (!(Model.BirthDate == null))
+            {
+                <td>Bitrhdate</td>
+            }
+            <td>Position</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Country</td>
+            <td>@Model.Club.Name</td>
+            @if (!(Model.BirthDate == null))
+            {
+                <td>@Model.BirthDate</td>
+            }
+            <td>@Model.Position</td>
+        </tr>
+    </tbody>
+</table>
+

@@ -1,0 +1,23 @@
+﻿@model IEnumerable<SoccerUpdated.Models.Players>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<table>
+    <thead>
+        <tr>
+            <td>Player</td>
+            <td>Club</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var player in Model)
+        {
+        <tr>
+            <td>@Html.ActionLink(player.Name ,"Info","Players", new { id = player.Id}, null)</td>
+            @if (!(player.Club.Name == null))
+            { <td>@player.Club.Name</td>}
+        </tr>
+        }
+    </tbody>
+</table>
