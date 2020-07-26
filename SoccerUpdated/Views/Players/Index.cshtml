@@ -3,7 +3,8 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<table>
+<button class="btn btn-info"><a href="/players/new">New</a></button>
+<table class=" table table-bordered">
     <thead>
         <tr>
             <td>Player</td>
@@ -14,7 +15,7 @@
         @foreach (var player in Model)
         {
         <tr>
-            <td>@Html.ActionLink(player.Name ,"Info","Players", new { id = player.Id}, null)</td>
+            <td>@Html.ActionLink(player.Name ,"Edit","Players", new { id = player.Id}, null)</td>
             @if (!(player.Club.Name == null))
             { <td>@player.Club.Name</td>}
         </tr>

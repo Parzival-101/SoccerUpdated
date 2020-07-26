@@ -13,8 +13,11 @@ namespace SoccerUpdated.Models
         [Required]
         [MaxLength(255)]
         public string Name { get; set; }
+
         public League League { get; set; }
+
         public string Stadium { get; set; }
+
         public string City { get; set; }
     }
 }

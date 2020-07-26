@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using SoccerUpdated.ViewModel;
 
 namespace SoccerUpdated.Controllers
 {
@@ -26,12 +27,53 @@ namespace SoccerUpdated.Controllers
             return View(players);
         }
 
+        //Player form
+        public ActionResult New()
+        {
+            var clubs = _context.Clubs.ToList();
+            var viewModel = new PlayerFormViewModel
+            {
+                Clubs = clubs
+            };
+            return View("PlayerForm",viewModel);
+        }
+
+        //Create New Player
+        [HttpPost]
+        public ActionResult Save(Players Players)
+        {
+            if (Players.Id == 0)
+              _context.Players.Add(Players);
+            else
+            {
+                var playerInDb = _context.Players.Single(m => m.Id == Players.Id);
+
+                playerInDb.Name = Players.Name;
+                playerInDb.Position = Players.Position;
+                playerInDb.Country = Players.Country;
+                playerInDb.ClubId = Players.ClubId;
+            }
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Players");
+        }
         public ActionResult Info(int id)
         {
             var player = _context.Players.Include(c => c.Club).SingleOrDefault(c => c.Id == id);
             if (player == null)
                 throw new System.ArgumentException("Parameter cannot be null");
             return View(player);
+        }
+
+        //Edit Player
+        public ActionResult Edit(int id)
+        {
+            var player = _context.Players.SingleOrDefault(m => m.Id == id);
+            var viewModel = new PlayerFormViewModel
+            {
+                Players = player,
+                Clubs = _context.Clubs.ToList()
+            };
+            return View("PlayerForm",viewModel);
         }
     }
 }

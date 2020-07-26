@@ -224,6 +224,14 @@
     <Compile Include="Migrations\202007240505458_Playersmodified.Designer.cs">
       <DependentUpon>202007240505458_Playersmodified.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007241359595_ClubIdtoPlayer.cs" />
+    <Compile Include="Migrations\202007241359595_ClubIdtoPlayer.Designer.cs">
+      <DependentUpon>202007241359595_ClubIdtoPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007261108521_PlayerExternalIdChanged.cs" />
+    <Compile Include="Migrations\202007261108521_PlayerExternalIdChanged.Designer.cs">
+      <DependentUpon>202007261108521_PlayerExternalIdChanged.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Club.cs" />
@@ -233,6 +241,7 @@
     <Compile Include="Models\Players.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\PlayerFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-cyborg.css" />
@@ -298,6 +307,7 @@
     <Content Include="Views\Club\Index.cshtml" />
     <Content Include="Views\Players\Index.cshtml" />
     <Content Include="Views\Players\Info.cshtml" />
+    <Content Include="Views\Players\PlayerForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -342,6 +352,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007240505458_Playersmodified.resx">
       <DependentUpon>202007240505458_Playersmodified.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007241359595_ClubIdtoPlayer.resx">
+      <DependentUpon>202007241359595_ClubIdtoPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007261108521_PlayerExternalIdChanged.resx">
+      <DependentUpon>202007261108521_PlayerExternalIdChanged.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
