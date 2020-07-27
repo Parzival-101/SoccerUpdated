@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.28307.852
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoccerUpdated", "SoccerUpdated\SoccerUpdated.csproj", "{F302729D-B480-4AD3-AA54-1033F7FE8466}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoccerUpdated.Tests", "SoccerUpdated.Tests\SoccerUpdated.Tests.csproj", "{896919A2-8577-4638-9D5D-9332B4C1FA36}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{F302729D-B480-4AD3-AA54-1033F7FE8466}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F302729D-B480-4AD3-AA54-1033F7FE8466}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F302729D-B480-4AD3-AA54-1033F7FE8466}.Release|Any CPU.Build.0 = Release|Any CPU
-		{896919A2-8577-4638-9D5D-9332B4C1FA36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{896919A2-8577-4638-9D5D-9332B4C1FA36}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{896919A2-8577-4638-9D5D-9332B4C1FA36}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{896919A2-8577-4638-9D5D-9332B4C1FA36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
