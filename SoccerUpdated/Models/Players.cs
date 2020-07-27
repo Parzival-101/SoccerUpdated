@@ -19,6 +19,7 @@ namespace SoccerUpdated.Models
 
         public Club Club { get; set; }
 
+        [Display(Name ="Club")]
         public int ClubId { get; set; }
 
         public string Position { get; set; }

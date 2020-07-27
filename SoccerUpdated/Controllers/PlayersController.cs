@@ -33,6 +33,7 @@ namespace SoccerUpdated.Controllers
             var clubs = _context.Clubs.ToList();
             var viewModel = new PlayerFormViewModel
             {
+                Players = new Players(),
                 Clubs = clubs
             };
             return View("PlayerForm",viewModel);
@@ -40,8 +41,18 @@ namespace SoccerUpdated.Controllers
 
         //Create New Player
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Players Players)
         {
+            if (!ModelState.IsValid)
+            {
+               var viewModel = new PlayerFormViewModel
+                {
+                    Players = Players,
+                    Clubs = _context.Clubs.ToList()
+                };
+                return View("PlayerForm",viewModel);
+            }
             if (Players.Id == 0)
               _context.Players.Add(Players);
             else
