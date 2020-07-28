@@ -1,4 +1,6 @@
-﻿using SoccerUpdated.Models;
+﻿using AutoMapper;
+using SoccerUpdated.Dto;
+using SoccerUpdated.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,38 +19,40 @@ namespace SoccerUpdated.Controllers.API
         }
 
         //Get api/players
-        public IEnumerable<Players> GetPlayers()
+        public IHttpActionResult GetPlayers()
         {
-            return _context.Players.ToList() ;
+            return Ok(_context.Players.ToList().Select(Mapper.Map <Players,PlayerDto>)) ;
         }
 
         //Get api/players/1
-        public Players GetPlayers(int id)
+        public IHttpActionResult GetPlayers(int id)
         {
             var player = _context.Players.SingleOrDefault(m => m.Id == id);
 
             if (player == null)
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return NotFound();
 
-            return player;
+            return Ok(Mapper.Map<Players, PlayerDto>(player));
         }
 
         //Post api/players
         [HttpPost]
-        public Players CreatePlayer(Players players)
+        public IHttpActionResult CreatePlayer(PlayerDto playerdto)
         {
             if (!ModelState.IsValid)
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
 
+            var players = Mapper.Map<PlayerDto, Players>(playerdto);
             _context.Players.Add(players);
             _context.SaveChanges();
 
-            return players;
+            playerdto.Id = players.Id;
+            return Created(new Uri(Request.RequestUri + "/" + players.Id),playerdto);
         }
 
         //Put api/players/1
         [HttpPut]
-        public void UpdatePlayer(int id, Players players)
+        public void UpdatePlayer(int id, PlayerDto playerDto)
         {
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
@@ -58,11 +62,8 @@ namespace SoccerUpdated.Controllers.API
             if (playerInDb == null)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
-            playerInDb.Name = players.Name;
-            playerInDb.Position = players.Position;
-            playerInDb.ClubId = players.ClubId;
-            playerInDb.Country = players.Country;
-            playerInDb.BirthDate = players.BirthDate;
+            Mapper.Map(playerDto, playerInDb);
+
 
             _context.SaveChanges();
 
