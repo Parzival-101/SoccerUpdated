@@ -179,6 +179,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\API\LeagueAPIController.cs" />
+    <Compile Include="Controllers\API\PlayersController.cs" />
     <Compile Include="Controllers\ClubController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LeagueController.cs" />
