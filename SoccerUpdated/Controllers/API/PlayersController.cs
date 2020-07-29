@@ -71,7 +71,7 @@ namespace SoccerUpdated.Controllers.API
 
         //Delete api/players/1
         [HttpDelete]
-        public void DeleteCustomer(int id)
+        public void Delete(int id)
         {
             var playerInDb = _context.Players.SingleOrDefault(m => m.Id == id);
 
