@@ -12,30 +12,38 @@
             <td>Delete</td>
         </tr>
     </thead>
-    <tbody>
-        @foreach (var player in Model)
-        {
-        <tr>
-            <td>@Html.ActionLink(player.Name ,"Edit","Players", new { id = player.Id}, null)</td>
-            @if (!(player.Club.Name == null))
-            { <td>@player.Club.Name</td>}
-            <td>
-               <button data-player-id="@player.Id" class="btn-link js-delete"> Delete </button>
-            </td>
-        </tr>
-        }
-    </tbody>
+    <tbody></tbody>
 </table>
 
 @section scripts
 {
    <script>
-       $(document).ready(function ()
-       {
-           $("#players").DataTable();
+       $(document).ready(function () {
+           $("#players").DataTable({
+               ajax: {
+                   url: "/api/players",
+                   dataSrc: ""
+               },
+               columns: [
+                   {
+                       data: "name",
+                       render: function (data, type, player) {
+                           return "<a href='/players/edit/" + player.id + "'>" + data + "</a>";
+                       }
+                   },
+                   {
+                       data: "name"
+                   },
+                   {
+                       data: "id",
+                       render: function (data) {
+                           return "<button class='btn-link js-delete' data-player-id=" + data + ">Delete</button>";
+                       }
+                   }
+               ],
+           });
 
-           $("#players").on("click", ".js-delete",function ()
-           {
+           $("#players").on("click", ".js-delete", function () {
                var button = $(this);
 
                bootbox.confirm("Are you sure to delete this player?", function (result) {
@@ -50,10 +58,9 @@
                            });
                    }
                });
-               
+
            });
-            
-       });
+       })
 
     </script> 
 }

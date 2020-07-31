@@ -23,8 +23,7 @@ namespace SoccerUpdated.Controllers
         // GET: Players
         public ActionResult Index()
         {
-            var players = _context.Players.Include(c=>c.Club).ToList();
-            return View(players);
+            return View();
         }
 
         //Player form
