@@ -19,7 +19,7 @@
 {
    <script>
        $(document).ready(function () {
-           $("#players").DataTable({
+          var table = $("#players").DataTable({
                ajax: {
                    url: "/api/players",
                    dataSrc: ""
@@ -53,7 +53,7 @@
                                url: "/api/players/" + button.attr("data-player-id"),
                                method: "DELETE",
                                success: function () {
-                                   button.parents("tr").remove();
+                                   table.row(button.parents("tr")).remove().draw();
                                }
                            });
                    }
