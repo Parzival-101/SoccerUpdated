@@ -16,6 +16,8 @@ namespace SoccerUpdated.Dto
 
         public DateTime? BirthDate { get; set; }
 
+        public ClubDto Club { get; set; }
+
         public int ClubId { get; set; }
 
         public string Position { get; set; }

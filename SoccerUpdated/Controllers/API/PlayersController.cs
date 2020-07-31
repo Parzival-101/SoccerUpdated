@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Data.Entity;
 
 namespace SoccerUpdated.Controllers.API
 {
@@ -21,7 +22,11 @@ namespace SoccerUpdated.Controllers.API
         //Get api/players
         public IHttpActionResult GetPlayers()
         {
-            return Ok(_context.Players.ToList().Select(Mapper.Map <Players,PlayerDto>)) ;
+            var playersDtos = _context.Players
+                .Include(p=>p.Club)
+                .ToList()
+                .Select(Mapper.Map<Players, PlayerDto>);
+            return Ok(playersDtos) ;
         }
 
         //Get api/players/1

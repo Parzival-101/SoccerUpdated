@@ -190,6 +190,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\PlayersController.cs" />
+    <Compile Include="Dto\ClubDto.cs" />
     <Compile Include="Dto\PlayerDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

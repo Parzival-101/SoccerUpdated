@@ -14,6 +14,10 @@ namespace SoccerUpdated.App_Start
         {
             Mapper.CreateMap<Players, PlayerDto>();
             Mapper.CreateMap<PlayerDto, Players>();
+            Mapper.CreateMap<Club, ClubDto>();
+            Mapper.CreateMap<ClubDto, Club>();
+
+           
         }
     }
 }
