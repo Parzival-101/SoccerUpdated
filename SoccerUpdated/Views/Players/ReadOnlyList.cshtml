@@ -1,0 +1,41 @@
+﻿@model IEnumerable<SoccerUpdated.Models.Players>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<table id="players" class=" table table-bordered">
+    <thead>
+        <tr>
+            <td>Player</td>
+            <td>Club</td>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+{
+   <script>
+       $(document).ready(function () {
+          var table = $("#players").DataTable({
+               ajax: {
+                   url: "/api/players",
+                   dataSrc: ""
+               },
+               columns: [
+                   {
+                       data: "name",
+                       render: function (data, type, player) {
+                           return "<a href='/players/info/" + player.id + "'>" + data + "</a>";
+                       }
+                   },
+                   {
+                       data: "club.name"
+                   }
+               ],
+           });
+
+       })
+
+    </script> 
+}

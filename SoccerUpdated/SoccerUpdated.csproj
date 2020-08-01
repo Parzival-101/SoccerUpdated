@@ -18,7 +18,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44312</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -238,6 +238,14 @@
     <Compile Include="Migrations\202007261108521_PlayerExternalIdChanged.cs" />
     <Compile Include="Migrations\202007261108521_PlayerExternalIdChanged.Designer.cs">
       <DependentUpon>202007261108521_PlayerExternalIdChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008010545170_SeedUsers.cs" />
+    <Compile Include="Migrations\202008010545170_SeedUsers.Designer.cs">
+      <DependentUpon>202008010545170_SeedUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008011336583_AddaCountryToApplicationUser.cs" />
+    <Compile Include="Migrations\202008011336583_AddaCountryToApplicationUser.Designer.cs">
+      <DependentUpon>202008011336583_AddaCountryToApplicationUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -490,6 +498,7 @@
     <Content Include="Views\Players\Index.cshtml" />
     <Content Include="Views\Players\Info.cshtml" />
     <Content Include="Views\Players\PlayerForm.cshtml" />
+    <Content Include="Views\Players\ReadOnlyList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -541,6 +550,12 @@
     <EmbeddedResource Include="Migrations\202007261108521_PlayerExternalIdChanged.resx">
       <DependentUpon>202007261108521_PlayerExternalIdChanged.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008010545170_SeedUsers.resx">
+      <DependentUpon>202008010545170_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008011336583_AddaCountryToApplicationUser.resx">
+      <DependentUpon>202008011336583_AddaCountryToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -560,7 +575,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>54634</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54634/</IISUrl>
+          <IISUrl>https://localhost:44312/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

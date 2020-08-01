@@ -42,6 +42,7 @@ namespace SoccerUpdated.Controllers.API
 
         //Post api/players
         [HttpPost]
+        [Authorize(Roles = "CanManagePlayer")]
         public IHttpActionResult CreatePlayer(PlayerDto playerdto)
         {
             if (!ModelState.IsValid)
@@ -57,6 +58,7 @@ namespace SoccerUpdated.Controllers.API
 
         //Put api/players/1
         [HttpPut]
+        [Authorize(Roles = "CanManagePlayer")]
         public void UpdatePlayer(int id, PlayerDto playerDto)
         {
             if (!ModelState.IsValid)
@@ -76,6 +78,7 @@ namespace SoccerUpdated.Controllers.API
 
         //Delete api/players/1
         [HttpDelete]
+        [Authorize(Roles = "CanManagePlayer")]
         public void Delete(int id)
         {
             var playerInDb = _context.Players.SingleOrDefault(m => m.Id == id);

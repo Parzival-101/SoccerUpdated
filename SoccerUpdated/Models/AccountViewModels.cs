@@ -8,6 +8,9 @@ namespace SoccerUpdated.Models
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [Required]
+        public string Country { get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -64,6 +67,8 @@ namespace SoccerUpdated.Models
 
     public class RegisterViewModel
     {
+        [Required]
+        public string Country { get; set; }
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

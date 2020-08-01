@@ -54,9 +54,9 @@ namespace SoccerUpdated
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "832482780491227",
+               appSecret: "c9aedec9c928b497f09dc7b8be0c46f5");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

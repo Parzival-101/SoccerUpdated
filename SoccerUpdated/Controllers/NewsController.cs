@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace SoccerUpdated.Controllers
 {
+    [AllowAnonymous]
     public class NewsController : Controller
     {
         // GET: News

@@ -23,10 +23,14 @@ namespace SoccerUpdated.Controllers
         // GET: Players
         public ActionResult Index()
         {
-            return View();
+            if (User.IsInRole("CanManagePlayer"))
+                return View("Index");
+            
+            return View("ReadOnlyList");
         }
 
         //Player form
+        [Authorize(Roles ="CanManagePlayer")]
         public ActionResult New()
         {
             var clubs = _context.Clubs.ToList();
@@ -75,6 +79,7 @@ namespace SoccerUpdated.Controllers
         }
 
         //Edit Player
+        [Authorize(Roles = "CanManagePlayer")]
         public ActionResult Edit(int id)
         {
             var player = _context.Players.SingleOrDefault(m => m.Id == id);
