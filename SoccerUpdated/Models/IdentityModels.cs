@@ -28,7 +28,7 @@ namespace SoccerUpdated.Models
         public DbSet<Players> Players { get; set; }
         public DbSet<Club> Clubs { get; set; }
         public DbSet<League> Leagues { get; set; }
-
+        public DbSet<Match> Matches { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
