@@ -204,6 +204,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LeagueController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MatchController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\PlayersController.cs" />
     <Compile Include="Dto\ClubDto.cs" />
@@ -522,6 +523,7 @@
     <Content Include="Views\Players\Info.cshtml" />
     <Content Include="Views\Players\PlayerForm.cshtml" />
     <Content Include="Views\Players\ReadOnlyList.cshtml" />
+    <Content Include="Views\Match\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
