@@ -8,16 +8,16 @@ using System.Web.Http;
 
 namespace SoccerUpdated.Controllers.API
 {
-    public class LeagueAPIController : ApiController
+    public class LeagueController : ApiController
     {
         private ApplicationDbContext _context;
 
-        public LeagueAPIController()
+        public LeagueController()
         {
             _context = new ApplicationDbContext();
         }
 
-        //Get list pf all leagues
+   
         public IEnumerable<League> GetLeague()
         {
             return _context.Leagues.ToList();
