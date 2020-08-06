@@ -18,9 +18,11 @@ namespace SoccerUpdated.Controllers.API
         }
 
    
-        public IEnumerable<League> GetLeague()
+        public IHttpActionResult GetLeague()
         {
-            return _context.Leagues.ToList();
+            var leagueQuery = _context.Leagues.ToList();
+
+            return Ok(leagueQuery);
         }
 
         //get individual list

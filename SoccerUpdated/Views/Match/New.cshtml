@@ -5,7 +5,7 @@
 }
 
 <h2>New Match</h2>
-<form>
+<form id="newMatch">
     <div class="form-group">
         <label>League</label>
         <input id="league" type="text" class="form-control" />
@@ -20,7 +20,10 @@
     {
      <script>
          $(document).ready(function () {
-             var vm = {}
+             var vm = {
+                 leagueid=[],
+                 clubId =[]
+             }
              var league = new Bloodhound({
                  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
                  queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -32,13 +35,47 @@
 
              $('#league').typeahead({
                  highlight:true
-             }, {
+             },
+                 {
                  name: 'league',
                  display: 'name',
                  source: league
                  }).on("typeahead:select", function (e, league) {
-                     vm.leagueId = league.leagueId;
+                     vm.leagueId = league.leagueId
                  });
+
+             var club = new Bloodhound({
+                 datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+                 queryTokenizer: Bloodhound.tokenizers.whitespace,
+                 remote: {
+                     url: '/api/club?query=%QUERY',
+                     wildcard: '%QUERY'
+                 }
+             });
+
+             $('#club').typeahead({
+                 highlight:true
+             }, {
+                 name: 'club',
+                 display: 'name',
+                 source: club
+                 }).on("typeahead:select", function (e, club) {
+                     vm.clubId = club.clubId
+                 });
+
+             $("#newMatch").submit(function (e) {
+             e.preventDefault();
+             $.ajax({
+                 url: "/api/match",
+                 method: "post",
+                 data: vm
+             })
+                 .done(function () {
+                     console.log("done");
+                 })
+                 .fail(function () {
+                 });
+         });
          });
          
      </script>

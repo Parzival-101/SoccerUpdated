@@ -197,6 +197,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\API\ClubController.cs" />
     <Compile Include="Controllers\API\LeagueController.cs" />
     <Compile Include="Controllers\API\MatchController.cs" />
     <Compile Include="Controllers\API\PlayersController.cs" />
